@@ -22,9 +22,9 @@ public class LoginStepDef {
 	
 	@Before
 	public void driversetup() {
-		WebDriverManager.edgedriver().setup();
+		WebDriverManager.chromedriver().setup();
 		//	driver=new EdgeDriver();
-		driver=new EdgeDriver();
+		driver=new ChromeDriver();
 		
 		login= new LoginPage(driver);
 	}
