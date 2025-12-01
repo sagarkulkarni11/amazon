@@ -24,9 +24,10 @@ public class LoginStepDef {
 	}
 
 	@When("User enters Valid UID and PW")
-	public void user_enters_valid_uid_and_pw() {
+	public void user_enters_valid_uid_and_pw() throws InterruptedException {
 		login.EnterUID("student");
 		login.EnterPW("Password123");
+		Thread.sleep(3000);
 	    login.ClickSubmit();
 	}
 
