@@ -9,16 +9,30 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
 
 import POMClasses.LoginPage;
+import io.cucumber.java.Before;
+import io.cucumber.java.BeforeAll;
 import io.cucumber.java.en.*;
+import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class LoginStepDef {
+	 
 	
-	WebDriver driver=new EdgeDriver();
-	LoginPage login= new LoginPage(driver);
+	WebDriver  driver;
+	LoginPage login;
+	
+	@Before
+	public void driversetup() {
+		WebDriverManager.edgedriver().setup();
+		//	driver=new EdgeDriver();
+		driver=new EdgeDriver();
+		
+		login= new LoginPage(driver);
+	}
 
 	@Given("User is on Login page")
 	public void user_is_on_login_page() {
 		
+
 		driver.navigate().to("https://practicetestautomation.com/practice-test-login/");
 		driver.manage().window().maximize();
 		driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(10));
