@@ -6,13 +6,14 @@ import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.edge.EdgeDriver;
 
 import POMClasses.LoginPage;
 import io.cucumber.java.en.*;
 
 public class LoginStepDef {
 	
-	WebDriver driver=new ChromeDriver();
+	WebDriver driver=new EdgeDriver();
 	LoginPage login= new LoginPage(driver);
 
 	@Given("User is on Login page")
